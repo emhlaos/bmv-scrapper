@@ -12,7 +12,7 @@ from zipfile import ZipFile
 
 #LOAD FUNCTION:
 currentdirectory = os.getcwd()
-xbrldirectory = os.path.join(currentdirectory,"/xbrl")
+xbrldirectory = currentdirectory+"/xbrl"
 if not os.path.exists(xbrldirectory): os.makedirs(xbrldirectory)
 db = open(currentdirectory+"/babycaw.txt","r").read()
 matrix = {}
