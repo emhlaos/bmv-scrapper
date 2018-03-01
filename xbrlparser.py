@@ -49,7 +49,7 @@ for stock in stocks:
                         print(file)
                         print("Dowloading: "+ stock + "_" + matrix["R.TIME"][m] + ".json")
                         try:
-                            pjson = open("/xbrl/" + stock + "_" + matrix["R.TIME"][m] + ".json", "wb")
+                            pjson = open(xbrldirectory+"/" + stock + "_" + matrix["R.TIME"][m] + ".json", "wb")
                             pjson.write(zp.read(file))
                             pjson.close()
                         except Exception as args:
@@ -65,7 +65,7 @@ for stock in stocks:
             with urlopen(matrix[stock][m]) as pjson:
                 try:
                     print("Downloading",stock + "_" + matrix["R.TIME"][m] + ".json")
-                    tempjson = open(currentdirectory+"/xbrl/" + stock + "_" + matrix["R.TIME"][m] + ".json", "wb")
+                    tempjson = open(xbrldirectory+"/" + stock + "_" + matrix["R.TIME"][m] + ".json", "wb")
                     tempjson.write(pjson.read())
                     tempjson.close()
                 except Exception as args:
